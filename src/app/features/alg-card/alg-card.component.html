@@ -1,0 +1,32 @@
+<!-- Backdrop (solo visible cuando isExpanded) -->
+@if (isExpanded) {
+  <div 
+    class="backdrop" 
+    [@backdropAnimation]
+    (click)="toggleCard()"
+  ></div>
+}
+
+<!-- Carta (contiene la lógica principal) -->
+<div 
+  class="card"
+  [@expandAnimation]="isExpanded ? 'expanded' : 'collapsed'"
+  (click)="!isExpanded && toggleCard()"  
+>
+  <!-- Contenido colapsado -->
+  @if (!isExpanded) {
+    <div class="collapsed-content">
+      <h2>{{ title }}</h2>
+      <p>{{ collapsedContent }}</p>
+    </div>
+  }
+
+  <!-- Contenido expandido -->
+  @if (isExpanded) {
+    <div class="expanded-content">
+      <h2>{{ title }}</h2>
+      <p>{{ expandedContent }}</p>
+      <button (click)="toggleCard($event)">Cerrar</button>
+    </div>
+  }
+</div>

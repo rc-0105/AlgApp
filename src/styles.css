@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+  /* Colores base */
+  --color-dark-1: #1E1E1E; /* Fondo principal */
+  --color-dark-2: #2A2E35; /* Fondos secundarios */
+  --color-dark-3: #373C44; /* Elementos interactivos */
+  
+  /* Colores de acento */
+  --color-accent: #00C9A7; /* Botones, links, elementos destacados */
+  
+  /* Colores de texto */
+  --color-text-primary: #E6E6E6; /* Texto principal */
+  --color-text-secondary: #B3B3B3; /* Texto secundario */
+  
+  /* Colores adicionales */
+  --color-border: #2D2D2D; /* Bordes y separadores */
+}
+
+/* Typography */
+body{
+    font-size: 16px;
+    background: url('app/assets/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+}
+

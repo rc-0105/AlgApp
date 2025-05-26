@@ -1,0 +1,30 @@
+/* Backdrop */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999; /* Debajo de la carta */
+}
+
+/* Carta */
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Contenido expandido (para evitar cierre accidental) */
+.expanded-content {
+  cursor: auto; /* Anula el cursor pointer del contenedor padre */
+  pointer-events: auto; /* Permite interacción con botones/links internos */
+}
+
+/* Deshabilita el scroll del body cuando la carta está abierta */
+body.no-scroll {
+  overflow: hidden;
+}

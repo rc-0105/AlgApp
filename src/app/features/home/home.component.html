@@ -1,0 +1,9 @@
+<div class="card-grid">
+  <app-alg-card
+    *ngFor="let card of cards; let i = index"
+    [title]="card.title"
+    [collapsedContent]="card.collapsedContent"
+    [expandedContent]="card.expandedContent"
+    (cardExpanded)="onCardExpand($event, i)"
+  ></app-alg-card>
+</div>
