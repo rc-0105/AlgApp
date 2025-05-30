@@ -38,3 +38,23 @@
     max-height: 220px;
   }
 }
+.diagram-section.diagram-casos-uso {
+  background: url('../../assets/image.png') no-repeat center center;
+  background-size: contain;
+  min-height: 340px;
+  min-width: 220px;
+}
+.diagram-section.diagram-clases {
+  background: url('../../assets/imagen2.png') no-repeat center center;
+  background-size: contain;
+  min-height: 340px;
+  min-width: 220px;
+}
+.diagram-section h2 {
+  position: relative;
+  z-index: 2;
+  background: rgba(42,46,53,0.85);
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  margin-bottom: 1.2em;
+}
