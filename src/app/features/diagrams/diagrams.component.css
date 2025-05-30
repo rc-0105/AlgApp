@@ -39,14 +39,11 @@
   }
 }
 .diagram-section.diagram-casos-uso {
-  background: url('/AlgApp/assets/image.png') no-repeat center center;
-  background-size: contain;
+
   min-height: 340px;
   min-width: 220px;
 }
 .diagram-section.diagram-clases {
-  background: url('/AlgApp/assets/imagen2.png') no-repeat center center;
-  background-size: contain;
   min-height: 340px;
   min-width: 220px;
 }
