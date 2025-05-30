@@ -1,6 +1,33 @@
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  align-items: center;
+  margin: 2rem auto;
+  width: max-content;
+}
+
+.card-grid app-alg-card:nth-child(1) {
+  grid-area: 1 / 1 / span 2 / span 2;
+}
+.card-grid app-alg-card:nth-child(2) {
+  grid-area: 1 / 3 / span 2 / span 2;
+}
+.card-grid app-alg-card:nth-child(3) {
+  grid-area: 3 / 1 / span 2 / span 2;
+}
+.card-grid app-alg-card:nth-child(4) {
+  grid-area: 3 / 3 / span 2 / span 2;
+}
+
+.card-grid app-alg-card {
+  width: 100%;
+  height: 100%;
+  min-width: 12em;
+  min-height: 10em;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
 }
 
 /* Opcional: Deshabilitar scroll cuando una carta está expandida */

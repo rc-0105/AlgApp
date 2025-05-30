@@ -1,0 +1,45 @@
+<div class="csv-upload-results-row">
+  <div class="csv-upload-container">
+    <h3 class="csv-upload-title">Subir archivo CSV y completar datos</h3>
+    <form class="csv-upload-form" (submit)="uploadFile(); $event.preventDefault()">
+      <div class="form-group">
+        <label for="file"><span class="icon-upload"></span> Archivo CSV:</label>
+        <input type="file" id="file" (change)="onFileSelected($event)" accept=".csv" />
+      </div>
+      <div class="form-group">
+        <label for="algorithm"><span class="icon-algo"></span> Algoritmo:</label>
+        <select id="algorithm" (change)="onAlgorithmChange($event)">
+          <option value="">Selecciona un algoritmo</option>
+          <option value="arbol">Árboles de Decisión</option>
+          <option value="kmeans">K-Means</option>
+          <option value="kmodes">K-Modes</option>
+          <option value="regresion">Regresión Lineal</option>
+        </select>
+      </div>
+      <button type="submit" [disabled]="loading">
+        <span *ngIf="!loading">Enviar</span>
+        <span *ngIf="loading" class="loader"></span>
+      </button>
+      <div *ngIf="loading" class="csv-upload-loading">Procesando...</div>
+      <div *ngIf="error" class="csv-upload-error">{{ error }}</div>
+    </form>
+  </div>
+
+  <div *ngIf="datosProcesados && datosProcesados.length > 0" class="csv-result-card">
+    <h3 class="csv-result-title">Resultado procesado</h3>
+    <div class="csv-result-table-container">
+      <table class="csv-result-table">
+        <thead>
+          <tr>
+            <th *ngFor="let col of datosProcesados[0]">{{ col }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of datosProcesados.slice(1)">
+            <td *ngFor="let cell of row">{{ cell }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

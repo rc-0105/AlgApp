@@ -7,3 +7,23 @@
     (cardExpanded)="onCardExpand($event, i)"
   ></app-alg-card>
 </div>
+<div class="csv-upload-results-row">
+  <app-csv-upload (datosProcesadosChange)="onDatosProcesados($event)"></app-csv-upload>
+  <div *ngIf="datosProcesados && datosProcesados.length > 0" class="csv-result-card">
+    <h3 class="csv-result-title">Resultado procesado</h3>
+    <div class="csv-result-table-container">
+      <table class="csv-result-table">
+        <thead>
+          <tr>
+            <th *ngFor="let col of datosProcesados[0]">{{ col }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of datosProcesados.slice(1)">
+            <td *ngFor="let cell of row">{{ cell }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -15,18 +15,12 @@
 >
   <!-- Contenido colapsado -->
   @if (!isExpanded) {
-    <div class="collapsed-content">
-      <h2>{{ title }}</h2>
-      <p>{{ collapsedContent }}</p>
-    </div>
+    <div class="collapsed-content" [innerHTML]="collapsedContent"></div>
   }
 
   <!-- Contenido expandido -->
   @if (isExpanded) {
-    <div class="expanded-content">
-      <h2>{{ title }}</h2>
-      <p>{{ expandedContent }}</p>
-      <button (click)="toggleCard($event)">Cerrar</button>
-    </div>
+    <div class="expanded-content" [innerHTML]="expandedContent" (closeCard)="toggleCard()"></div>
+    <button class="close-btn" (click)="toggleCard(); $event.stopPropagation()">Cerrar</button>
   }
 </div>

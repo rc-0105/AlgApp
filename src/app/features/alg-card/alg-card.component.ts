@@ -46,7 +46,12 @@ export class AlgCardComponent {
   isExpanded = false;
 
   toggleCard(event?: MouseEvent) {
-    // Evita la propagación del clic si viene del botón "Cerrar" o contenido expandido
+    // Si el evento viene del botón, cerrar siempre
+    if (event && (event.target as HTMLElement).tagName === 'BUTTON') {
+      this.isExpanded = !this.isExpanded;
+      return;
+    }
+    // Si está expandido y el clic es en el contenido expandido (pero no en el botón), no cerrar
     if (event && (event.target as HTMLElement).closest('.expanded-content')) {
       return;
     }
