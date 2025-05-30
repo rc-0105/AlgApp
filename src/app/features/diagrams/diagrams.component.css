@@ -1,0 +1,40 @@
+/* Centrado y estilos para las secciones de diagramas */
+.diagram-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2.5rem auto 2.5rem auto;
+  padding: 2rem 1.5rem;
+  background: var(--color-dark-2, #2A2E35);
+  border-radius: 1.2em;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+  max-width: 700px;
+  width: 90%;
+}
+.diagram-section h2 {
+  color: var(--color-accent, #00C9A7);
+  font-size: 1.5em;
+  margin-bottom: 1.2em;
+  text-align: center;
+}
+.diagram-img {
+  display: block;
+  max-width: 100%;
+  max-height: 420px;
+  width: auto;
+  height: auto;
+  border-radius: 0.7em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  margin-bottom: 0.5em;
+  background: #fff;
+  object-fit: contain;
+}
+@media (max-width: 600px) {
+  .diagram-section {
+    padding: 1rem 0.3rem;
+  }
+  .diagram-img {
+    max-height: 220px;
+  }
+}
